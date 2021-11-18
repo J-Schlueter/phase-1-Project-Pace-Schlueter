@@ -1,14 +1,18 @@
 //target icons and add listeners to run click function with respective 
 const Meta = document.querySelector("#Meta-Logo")
-Meta.addEventListener("click",clickImg(FB))
+Meta.addEventListener("click",clickImg("FB"))
+
 const Apple = document.querySelector("#Apple-Logo")
-Apple.addEventListener("click",clickImg(AAPL))
+Apple.addEventListener("click",clickImg("AAPL"))
+
 const Amazon = document.querySelector("#Amazon-Logo")
-Amazon.addEventListener("click",clickImg(AMZN))
+Amazon.addEventListener("click",clickImg("AMZN"))
+
 const Netflix = document.querySelector("#Netflix-Logo")
-Netflix.addEventListener("click",clickImg(NFLX))
+Netflix.addEventListener("click",clickImg("NFLX"))
+
 const Alphabet = document.querySelector("#Google-Logo")
-Alphabet.addEventListener("click",clickImg(GOOG))
+Alphabet.addEventListener("click",clickImg("GOOG"))
 
 function clickImg(ticker) {
     //create a fetch dynamically using the ticker of the stock that was clicked
@@ -31,7 +35,7 @@ function clickImg(ticker) {
     //Updates placeholder img with the logo of the stock being quoted
     const quoteIcon = document.querySelector(".quote-image")
     //this is how I think the img would be updated but need to work out targeting the proper image
-    quoteIcon.src = ticker.src
+    // quoteIcon.src = ticker.src
 }
 
 
