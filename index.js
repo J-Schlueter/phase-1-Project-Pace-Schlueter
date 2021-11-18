@@ -30,6 +30,7 @@ function clickImg(ticker) {
 
     //Updates placeholder img with the logo of the stock being quoted
     const quoteIcon = document.querySelector(".quote-image")
+    //this is how I think the img would be updated but need to work out targeting the proper image
     quoteIcon.src = ticker.src
 }
 
