@@ -1,9 +1,7 @@
-//target icons and add listeners to run click function with respective 
-const imgBar = document.querySelector("#stock-menu")
-Meta.addEventListener("click", (e) => clickImg(e))
+const imgBar = document.querySelector("#stock-menu") // target the stock icons
+imgBar.addEventListener("click", (e) => clickImg(e)) // when an element is clicked in the stock menu run clickImg on it
 
-
-
+const companyBio = document.querySelector(".company-bio") //target company bio paragraph
 function clickImg(e) {
     //create a fetch dynamically using the ticker of the stock that was clicked
     fetch(`https://api.stockdata.org/v1/data/quote?symbols=${e.target.dataset.symbol}%2C&api_token=8wL6E8iXNf1JvxVu9NoYPCeIVaZ7qJpgGCu46QdQ`)
@@ -24,16 +22,15 @@ function clickImg(e) {
 
     //Updates placeholder img with the logo of the stock being quoted
     const quoteIcon = document.querySelector(".quote-image")
-    //this is how I think the img would be updated but need to work out targeting the proper image
     quoteIcon.src = e.target.src
 
-    
+    //seperate GET request to populate profile section
     fetch(`https://api.stockdata.org/v1/entity/profile?symbols=${e.target.dataset.symbol}&api_token=8wL6E8iXNf1JvxVu9NoYPCeIVaZ7qJpgGCu46QdQ`)
     .then(res => res.json())
-    .then(companyProfile => () => renderProfile(companyProfile.data))
-    function renderProfile() {
-    const companyBio = document.querySelector(".company-bio")
-    companyBio.innerText = profile.description
+    .then(companyProfile => renderProfile(companyProfile.data))
+
+    function renderProfile(profile) {
+        companyBio.innerText = profile.description //replace the inner text of the bio paragraph with the description from the API return data
     }
 }
 
@@ -43,5 +40,5 @@ const profileBttn = document.querySelector(".profile-button")
 profileBttn.addEventListener("click", () => unhideBio)
 
 function unhideBio(){
-
+    companyBio.style.display = "block"
 }
