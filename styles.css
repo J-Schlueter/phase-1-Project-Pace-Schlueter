@@ -44,8 +44,8 @@
     position: relative;
   }
   
-  p.company-bio{
-    display: block;
+  #company-bio{
+    display: none;
   }
 
   #Stock-detail img{
