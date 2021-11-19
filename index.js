@@ -30,7 +30,7 @@ function clickImg(e) {
     .then(companyProfile => renderProfile(companyProfile.data))
 
     function renderProfile(profile) {
-        companyBio.innerText = profile.description //replace the inner text of the bio paragraph with the description from the API return data
+        companyBio.innerText = profile[0].description //replace the inner text of the bio paragraph with the description from the API return data
     }
 }
 
