@@ -1,7 +1,7 @@
 const imgBar = document.querySelector("#stock-menu") // target the stock icons
 imgBar.addEventListener("click", (e) => clickImg(e)) // when an element is clicked in the stock menu run clickImg on it
 
-const companyBio = document.querySelector(".company-bio") //target company bio paragraph
+const companyBio = document.querySelector("#company-bio") //target company bio paragraph
 function clickImg(e) {
     //create a fetch dynamically using the ticker of the stock that was clicked
     fetch(`https://api.stockdata.org/v1/data/quote?symbols=${e.target.dataset.symbol}%2C&api_token=8wL6E8iXNf1JvxVu9NoYPCeIVaZ7qJpgGCu46QdQ`)
@@ -30,15 +30,20 @@ function clickImg(e) {
     .then(companyProfile => renderProfile(companyProfile.data))
 
     function renderProfile(profile) {
-        companyBio.innerText = profile.description //replace the inner text of the bio paragraph with the description from the API return data
+        const companyDescription = document.querySelector(".company-description")
+        companyDescription.innerText = profile[0].description //replace the inner text of the bio paragraph with the description from the API return data
     }
 }
 
 
 
 const profileBttn = document.querySelector(".profile-button")
-profileBttn.addEventListener("click", () => unhideBio)
+profileBttn.addEventListener("click", () => unhideBio())
 
 function unhideBio(){
-    companyBio.style.display = "block"
+    if (companyBio.style.display === "none") {
+        companyBio.style.display = "block";
+      } else {
+        companyBio.style.display = "none";
+      }
 }
