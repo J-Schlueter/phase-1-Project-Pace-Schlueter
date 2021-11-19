@@ -35,11 +35,14 @@ function clickImg(e) {
     }
 }
 
-
+const likeBttn = document.querySelector("#like-button")
+likeBttn.addEventListener("click", () => renderLike())
+function renderLike() {
+    window.alert("The price is right!")
+}
 
 const profileBttn = document.querySelector(".profile-button")
 profileBttn.addEventListener("click", () => unhideBio())
-
 function unhideBio(){
     if (companyBio.style.display === "none") {
         companyBio.style.display = "block";
