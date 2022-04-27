@@ -5,3 +5,5 @@ Additionally by clicking on the "Show company profile" button you can see a brie
 You can click the thumbs up or thumbs down icon to indicate your sentiment on the quoted price for that stock.
 
 All data is provided by the StockData.org API
+
+Check out the deployed version at https://statuesque-crepe-f835a1.netlify.app/
