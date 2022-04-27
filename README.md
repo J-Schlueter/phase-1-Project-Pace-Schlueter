@@ -6,4 +6,4 @@ You can click the thumbs up or thumbs down icon to indicate your sentiment on th
 
 All data is provided by the StockData.org API
 
-Check out the deployed version at https://statuesque-crepe-f835a1.netlify.app/
+Check out the deployed version at https://tech-stock-shop.netlify.app
